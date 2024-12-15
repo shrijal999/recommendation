@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Collection</title>
+    <style>
+        .filters, .slider-container {
+            margin-bottom: 20px;
+        }
+        .loading {
+            text-align: center;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Food Collection!</h1>
+        <p>Search foods to satisfy your cravings.</p>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search food" oninput="filterFoods()" />
+        </div>
+
+        <div class="filters">
+            <label>
+                <input type="radio" name="preference" value="veg" onclick="filterFoods()" /> Veg
+            </label>
+            <label>
+                <input type="radio" name="preference" value="non-veg" onclick="filterFoods()" /> Non-Veg
+            </label>
+        </div>
+
+        <div class="slider-container">
+            <label for="rating">How well do you want the dish to be?</label>
+            <input type="range" id="ratingSlider" min="0" max="10" step="1" onchange="updateRating()" />
+            <span id="ratingValue">5</span>
+        </div>
+
+        <div class="recommendations">
+            <ul id="recommendationsList"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
